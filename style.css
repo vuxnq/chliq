@@ -1,0 +1,63 @@
+* {
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  image-rendering: pixelated;
+}
+
+@font-face {
+  font-family: redactionbold;
+  src: url(assets/fonts/Redaction-Bold.woff2);
+}
+@font-face {
+  font-family: redactionitalic;
+  src: url(assets/fonts/Redaction-Italic.woff2);
+}
+@font-face {
+  font-family: redactionregular;
+  src: url(assets/fonts/Redaction-Regular.woff2);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: redactionregular;
+}
+
+main {
+  height: 100vh;
+}
+
+#click-area {
+  font-size: 50px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#chliq {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+#chliq:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+#chliq:active {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+#shop {
+  display: none;
+}
+
+#shop ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
