@@ -9,7 +9,8 @@ const texts = ["i ain't lied to nobody but me",
   "medusa never turned me to a statue",
   "i saw the sparks",
   "my regrets look just like texts i shouldn't send",
-  "wash it out of all of me to feel the fire",];
+  "wash it out of all of me to feel the fire",
+  "a lot of things i regret, but i just say i forget",];
 
 // VARIABLES
 var score = 0;
@@ -18,6 +19,35 @@ var assistant = 0;
 
 var clickPrice = 10;
 var assistantPrice = 1000;
+
+// COOKIES
+// function cookiesWrite() {
+//   document.cookie = "score = " + score + "; secure";
+//   document.cookie = "click = " + click + "; secure";
+//   document.cookie = "assistant = " + assistant + "; secure";
+//   document.cookie = "clickPrice = " + clickPrice + "; secure";
+//   document.cookie = "assistantPrice = " + assistantPrice + "; secure";
+//   console.log(document.cookie);
+// }
+
+// function cookiesSet() {
+//   let cookieRow = document.cookie.split(";");
+//   for (let i = 0; i < cookieRow.length; i++) {
+//     console.log(cookieRow[i].replace(" ", ""));
+//     let cookieSplit = (cookieRow[i].replace(" ", "")).split("=");
+//     if (cookieSplit[0] == "score") {
+//       score = cookieSplit[1];
+//     } else if (cookieSplit[0] == "click") {
+//       click = cookieSplit[1];
+//     } else if (cookieSplit[0] == "assistant") {
+//       assistant = cookieSplit[1];
+//     } else if (cookieSplit[0] == "clickPrice") {
+//       clickPrice = cookieSplit[1];
+//     } else if (cookieSplit[0] == "assistantPrice") {
+//       assistantPrice = cookieSplit[1];
+//     }
+//   }
+// }
 
 // BUTTONS
 document.getElementById("chliq").addEventListener("click", chliq);
@@ -36,7 +66,10 @@ function updater() {
 }
 
 function randomText() {
-  let random = texts[Math.floor((Math.random() * texts.length))];
+  let random;
+  do {
+    random = texts[Math.floor((Math.random() * texts.length))];
+  } while (random == document.getElementById("background-text").innerHTML);
   document.getElementById("background-text").innerHTML = random;
 }
 
